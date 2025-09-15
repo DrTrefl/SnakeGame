@@ -1,0 +1,110 @@
+html, body {
+  margin: 0; padding: 0;
+  height: 100%;
+  background: #121212;
+  color: #eee;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  user-select: none;
+  overflow: hidden;
+}
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+canvas {
+  background: #000;
+  border: 3px solid #0f0;
+  box-shadow: 0 0 12px #0f0;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: 400px;
+  height: 400px;
+}
+#scoreboard {
+  margin-top: 12px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  display: flex;
+  gap: 20px;
+}
+#message {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  color: #ff4444;
+  background: rgba(20,20,20,0.9);
+  padding: 20px 40px;
+  border-radius: 12px;
+  border: 3px solid #ff4444;
+  text-align: center;
+  display: none;
+  user-select: none;
+  animation: blink 1s infinite alternate;
+  z-index: 10;
+}
+@keyframes blink {
+  0% {opacity: 1;}
+  100% {opacity: 0.3;}
+}
+#menu {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: #222;
+  border: 3px solid #0f0;
+  padding: 35px 45px;
+  border-radius: 15px;
+  text-align: center;
+  user-select: none;
+  color: #0f0;
+  z-index: 15;
+}
+#menu h1 {
+  margin-bottom: 20px;
+  font-size: 3rem;
+}
+#menu button {
+  background: #0a0;
+  border: none;
+  color: #0f0;
+  padding: 14px 26px;
+  margin: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  user-select: none;
+}
+#menu button:hover {
+  background: #2f2;
+}
+#controls {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+}
+#controls button {
+  padding: 8px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid #0f0;
+  background: #000;
+  color: #0f0;
+  transition: background-color 0.3s;
+}
+#controls button:hover {
+  background: #0f0;
+  color: #000;
+}
+@media (max-width: 450px) {
+  canvas {
+    width: 90vw;
+    height: 90vw;
+  }
+}
